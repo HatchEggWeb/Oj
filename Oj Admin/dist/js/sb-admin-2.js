@@ -39,7 +39,9 @@ $(function() {
 
     while (true) {
         if (element.is('li')) {
-            element = element.parent().addClass('in').parent();
+            element = element.parent().addClass('').parent();
+            //element = element.parent().addClass('in').parent();
+            //修改了代码  'in'为原有代码
         } else {
             break;
         }
