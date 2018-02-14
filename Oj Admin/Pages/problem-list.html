@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OJ Admin</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <!-- Morris Charts CSS -->
+    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <!-- Add One Problem -->
+    <div class="modal fade bs-example-modal-lg" id="add-one-problem" tabindex="-1" role="dialog" aria-labelledby="AddOndProblem" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="AddOndProblem">Add One Problem</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form>
+                                <div class="form-group col-lg-12">
+                                    <label for="problem-title">问题标题</label>
+                                    <input type="text" class="form-control" id="problem-title" placeholder="title">
+                                 </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="problem-timelimit">时间限制</label>
+                                    <input type="text" class="form-control" id="problem-timelimit" placeholder="ms">
+                                    <p class="help-block">输入整数 单位MS</p>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="problem-timelimit">内存限制</label>
+                                    <input type="text" class="form-control" id="problem-timelimit" placeholder="ms">
+                                    <p class="help-block">输入整数 单位KB</p>
+                                </div>
+                                <div class="form-group col-lg-12">
+                                    <label for="problem-content">问题描述</label>
+                                    <textarea class="form-control" rows="4" id="problem-content" placeholder="content"></textarea>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="problem-input">输入</label>
+                                    <textarea class="form-control" rows="3" id="problem-input" placeholder="input"></textarea>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="problem-output">输出</label>
+                                    <textarea class="form-control" rows="3" id="problem-output" placeholder="output"></textarea>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="problem-input-sample">样例输入</label>
+                                    <textarea class="form-control" rows="3" id="problem-input-sample" placeholder="input-sample"></textarea>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="problem-output-sample">样例输出</label>
+                                    <textarea class="form-control" rows="3" id="problem-output-sample" placeholder="output-sample"></textarea>
+                                </div>
+                                <div class="form-group col-lg-12">
+                                    <label for="problem-tip">提示</label>
+                                    <textarea class="form-control" rows="3" id="problem-tip" placeholder="tips"></textarea>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary">添加</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <div id="wrapper">
+        <!-- 导航栏 -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <!-- 标题 -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="problem-list.html">OJ Admin v1.0</a>
+            </div>
+            <!-- 顶部导航栏 -->
+            <ul class="nav navbar-top-links navbar-right">
+            </ul>
+            <!-- 左侧导航栏 -->
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul id="side-menu" class="nav in">
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 题库模块<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="problem-list.html">题目列表</a>
+                                </li>
+                                <li>
+                                    <a href="problem-add.html">添加题目</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 课程模块<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="problem-list.html">课程列表</a>
+                                </li>
+                                <li>
+                                    <a href="problem-list.html">添加课程</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 题库模块<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="problem-list.html">题目列表</a>
+                                </li>
+                                <li>
+                                    <a href="problem-list.html">添加题目</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 竞赛模块<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="problem-list.html">竞赛列表</a>
+                                </li>
+                                <li>
+                                    <a href="problem-list.html">添加竞赛</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 用户管理</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+        
+
+
+        <div id="page-wrapper" style="min-height: 722px;">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Problem</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><button id="multiSelect" class="btn btn-sm btn-info">多选</button><button id="cancelSelect" class="btn btn-sm btn-info" style="display: none;">取消</button>&nbsp<button id="allSelect" class="btn btn-sm btn-info" style="display: none;">全选</button>&nbsp<button id="deleteSelect" class="btn btn-sm btn-info" style="display: none;">删除</button></div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 80px">ID</th>
+                                            <th>Title</th>
+                                            <th>Content</th>
+                                            <th style="width: 100px">Option</th>
+                                            <th style="width: 180px">Aviliable</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbody">
+                                        <tr>
+                                            <td>0001</td>
+                                            <td><a href="#">A+B</a></td>
+                                            <td>使用A+B</td>
+                                            <td><a href="" data-toggle="modal"  data-target="#add-one-problem">编辑</a>|<a href="#">测试</a></td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="0001" id="0001-a" value="aviliable" checked>可用
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="0001" id="0001-b" value="unaviliable">不可用
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>0002</td>
+                                            <td><a href="#">A+B</a></td>
+                                            <td>使用A+B</td>
+                                            <td><a href="#">编辑</a>|<a href="#">测试</a></td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="0002" id="0002-a" value="aviliable" checked>可用
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="0002" id="0002-b" value="unaviliable">不可用
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>0003</td>
+                                            <td><a href="#">A+B</a></td>
+                                            <td>使用A+B</td>
+                                            <td><a href="#">编辑</a>|<a href="#">测试</a></td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="0003" id="0003-a" value="aviliable" checked>可用
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="0003" id="0003-b" value="unaviliable">不可用
+                                                </label>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    <!-- Morris Charts JavaScript -->
+    <script src="../vendor/raphael/raphael.min.js"></script>
+    <script src="../vendor/morrisjs/morris.min.js"></script>
+    <script src="../data/morris-data.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/oj-admin.js"></script>
+    
+</body>
+</html>

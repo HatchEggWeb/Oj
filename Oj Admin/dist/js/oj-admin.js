@@ -14,7 +14,7 @@ $(function(){
     var $deleteSelect = $('#deleteSelect');
     var $allSelect = $('#allSelect');
     var $checkBody = $('<td><input type="checkbox" id="checkAll" name="checkAll" /></td>');
-    var $checkHead = $('<th style="width:50px"><input type="checkbox" id="checkAll" name="checkAll" /></th>');
+    var $checkHead = $('<th style="width:50px"></th>');
     var $tableBodytr = $('table tbody tr');
     var $tableHeadtr = $('table thead tr');
     $multiSelect.click(function(event) {
@@ -22,14 +22,14 @@ $(function(){
         $tableHeadtr.prepend($checkHead);
         $tableBodytr.prepend($checkBody);
         
-        $(this).fadeOut('slow/400/fast', function() {
-            $cancelSelect.fadeIn('slow/400/fast', function() {
+        $(this).fadeOut(100, function() {
+            $cancelSelect.fadeIn(100, function() {
                 
             });
-            $deleteSelect.fadeIn('slow/400/fast', function() {
+            $deleteSelect.fadeIn(100, function() {
                 
             });
-            $allSelect.fadeIn('slow/400/fast', function() {
+            $allSelect.fadeIn(100, function() {
                 
             });
         });
@@ -37,15 +37,15 @@ $(function(){
     });
     $cancelSelect.click(function(event) {
         $tableHeadtr.find('th').first().remove();
-        $tableBodytr.find('td').first().remove();
-        $deleteSelect.fadeOut('slow/400/fast', function() {
+        $tableBodytr.find('td:first').remove();
+        $deleteSelect.fadeOut(100, function() {
                 
             });
-        $allSelect.fadeOut('slow/400/fast', function() {
+        $allSelect.fadeOut(100, function() {
                 
             });
-        $(this).fadeOut('slow/400/fast', function() {
-            $multiSelect.fadeIn('slow/400/fast', function() {
+        $(this).fadeOut(100, function() {
+            $multiSelect.fadeIn(100, function() {
                 
             });
         });
