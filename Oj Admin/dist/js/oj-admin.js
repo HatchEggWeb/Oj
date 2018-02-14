@@ -7,6 +7,52 @@ $(function() {
     $('#side-menu').metisMenu();
 });
 
+$(function(){
+    //alert('s');
+    var $multiSelect = $('#multiSelect');
+    var $cancelSelect = $('#cancelSelect');
+    var $deleteSelect = $('#deleteSelect');
+    var $allSelect = $('#allSelect');
+    var $checkBody = $('<td><input type="checkbox" id="checkAll" name="checkAll" /></td>');
+    var $checkHead = $('<th style="width:50px"><input type="checkbox" id="checkAll" name="checkAll" /></th>');
+    var $tableBodytr = $('table tbody tr');
+    var $tableHeadtr = $('table thead tr');
+    $multiSelect.click(function(event) {
+        //alert("ss")
+        $tableHeadtr.prepend($checkHead);
+        $tableBodytr.prepend($checkBody);
+        
+        $(this).fadeOut('slow/400/fast', function() {
+            $cancelSelect.fadeIn('slow/400/fast', function() {
+                
+            });
+            $deleteSelect.fadeIn('slow/400/fast', function() {
+                
+            });
+            $allSelect.fadeIn('slow/400/fast', function() {
+                
+            });
+        });
+        event.stopPropagation();  
+    });
+    $cancelSelect.click(function(event) {
+        $tableHeadtr.find('th').first().remove();
+        $tableBodytr.find('td').first().remove();
+        $deleteSelect.fadeOut('slow/400/fast', function() {
+                
+            });
+        $allSelect.fadeOut('slow/400/fast', function() {
+                
+            });
+        $(this).fadeOut('slow/400/fast', function() {
+            $multiSelect.fadeIn('slow/400/fast', function() {
+                
+            });
+        });
+        event.stopPropagation(); 
+    });
+})
+
 //Loads the correct sidebar on window load,
 //collapses the sidebar on window resize.
 // Sets the min-height of #page-wrapper to window size
