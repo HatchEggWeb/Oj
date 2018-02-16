@@ -21,7 +21,9 @@ $('#problem-list').click(function(event) {
 		type: 'GET',
 		data: {},
 		success: function(result){
-			$('#tbody').html(result);
+			$('#tbody').find('#t1').html(result);//题目编号 例 0001
+			$('#tbody').find('#t2').html(result);//题目标题
+			$('#tbody').find('#t3').html(result);//题目内容
 		},
 		error: function(result) {
 			//
@@ -80,8 +82,22 @@ $('#problem-list').click(function(event) {
 	});
 });
 
-
-
-
-
 //题库添加题目 problem-add.html
+$('#add-one-problem-submit').click(function(event) {
+	$.ajax({
+    //几个参数需要注意一下
+        type: "POST",
+        dataType: "json",//预期服务器返回的数据类型
+        url: "/users/login" ,//url
+        data: $('#add-one-problem-form').serialize(),
+        success: function (result) {
+            //console.log(result);//打印服务端返回的数据(调试用)
+            if (result.resultCode == 200) {
+                alert("SUCCESS");
+            }
+            ;
+        },
+        error : function() {
+            alert("异常！");
+        }
+});

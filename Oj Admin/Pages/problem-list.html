@@ -14,7 +14,15 @@
     <!-- Morris Charts CSS -->
     <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
     <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Code Mirror -->
+    <link href="../vendor/codemirror/codemirror.css" rel="stylesheet">
+    <!-- Code Mirror dracula theme -->
+    <link href="../vendor/codemirror/theme/dracula.css" rel="stylesheet">
+    <!-- Code Mirror 3024-day theme -->
+    <link href="../vendor/codemirror/theme/3024-day.css" rel="stylesheet">
+    <!-- Code Mirror zenburn theme -->
+    <link href="../vendor/codemirror/theme/zenburn.css" rel="stylesheet">
 </head>
 <body>
     <style type="text/css">
@@ -95,12 +103,12 @@
                     </ul>
                 </div>
             </div>
-
         </nav>
         
 
 
         <div id="page-wrapper" style="min-height: 722px;">
+            <!-- Show One Problem -->
             <div class="modal fade bs-example-modal-lg" id="show-one-problem" tabindex="-1" role="dialog" aria-labelledby="ShowOneProblem" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
@@ -216,7 +224,94 @@
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal -->
             </div>
+            <!-- Test One Problem -->
+            <div class="modal fade bs-example-modal-lg" id="test-one-problem" tabindex="-1" role="dialog" aria-labelledby="TestOneProblem" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="TestOneProblem">马踏棋盘</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-12">
+                                        <h4 style="color: #3091f2">Description</h4>
+                                        <p id="test-problem-content">在5＊5的棋盘上，行坐标为X，列坐标为Y的位置放置一个国际象棋中的马，请求出，该棋子不重复的访问完每一个格子的方法数。(1<=X,Y<=5)</p>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <h4 style="color: #3091f2">Input</h4>
+                                        <p id="test-problem-input">一行：用空格隔开的两个整数，分别表示马所在的行坐标X，列坐标Y。</p>
+                                    </div>
+                                    <div style="height: 20px"></div>
+                                    <div class="col-lg-12">
+                                        <h4 style="color: #3091f2">Output</h4>      
+                                        <p id="test-problem-output">一个整数，访问每一个格子一次且仅一次的方法数。</p>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <h4 style="color: #3091f2">Sample Input</h4>
+                                        <div class="panel panel-default">
+                                            <div  id="test-problem-sample-input" class="panel-body">
+                                                fsf
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <h4 style="color: #3091f2">Sample Output</h4>
+                                        <div class="panel panel-default">
+                                            <div id="test-problem-sample-output" class="panel-body">
+                                                sdfd
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <h4 style="color: #3091f2">Tips</h4>
+                                        <div class="panel panel-default">
+                                            <div id="test-problem-sample-output" class="panel-body">
+                                                sdfd
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <h4 style="color: #3091f2">Code</h4>
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                <form class="form-inline pull-right">
+                                                    <div class="form-group">
+                                                        <label for="test-problem-t-select">theme</label>
+                                                        <select class="form-control input-sm" id="test-problem-t-select">
+                                                            <option selected="">3024-day</option>
+                                                            <option>dracula</option>
+                                                            <option>zenburn</option>
+                                                        </select>
+                                                    </div>
+                                                </form>
+                                                <form class="form-inline pull-left">
+                                                    <div class="form-group">
+                                                        <label for="test-problem-l-select">lang</label>
+                                                        <select class="form-control input-sm" id="test-problem-l-select">
+                                                            <option selected="">C</option>
+                                                            <option>dracule</option>
 
+                                                        </select>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <textarea class="form-control" id="test-problem-code"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                            <button type="button" class="btn btn-primary">提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Problem</h1>
@@ -243,7 +338,7 @@
                                             <td>0001</td>
                                             <td style="white-space:nowrap;text-overflow: ellipsis;overflow:hidden;max-width: 100px;"><a href="" data-toggle="modal"  data-target="#show-one-problem">马踏棋盘</a></td>
                                             <td style="white-space:nowrap;text-overflow: ellipsis;overflow:hidden;max-width: 150px;">在5＊5的棋盘上，行坐标为X，列坐标为Y的位置放置一个国际象棋中的马，请求出，该棋子不重复的访问完每一个格子的方法数。(1<=X,Y<=5)</td>
-                                            <td><a href="" data-toggle="modal"  data-target="#edit-one-problem">编辑</a>|<a href="#">测试</a></td>
+                                            <td><a href="" data-toggle="modal"  data-target="#edit-one-problem">编辑</a>|<a href="" data-toggle="modal"  data-target="#test-one-problem">测试</a></td>
                                             <td>
                                                 <label class="radio-inline">
                                                     <input type="radio" name="0001" id="0001-a" value="aviliable" checked>可用
@@ -291,8 +386,6 @@
         </div>
     </div>
 
-
-    
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
@@ -305,6 +398,11 @@
     <script src="../data/morris-data.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/oj-admin.js"></script>
-    
+    <!-- Code Mirror -->
+    <script src="../vendor/codemirror/codemirror.js"></script>
+    <!-- Code Mirror C-like -->
+    <script src="../vendor/codemirror/clike.js"></script>
+    <!-- Create Code Mirror -->
+    <script src="../vendor/codemirror/cm-create-theme.js"></script>
 </body>
 </html>
