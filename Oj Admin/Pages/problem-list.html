@@ -17,6 +17,14 @@
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+    <style type="text/css">
+        p{
+            margin: 10px;
+            text-indent: 2em;
+            font-size: 16px;
+            line-height: 24px;
+        }
+    </style>
     <div id="wrapper">
         <!-- 导航栏 -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -41,10 +49,10 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 题库模块<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="problem-list.html">题目列表</a>
+                                    <a id="problem-list" href="problem-list.html">题目列表</a>
                                 </li>
                                 <li>
-                                    <a href="problem-add.html">添加题目</a>
+                                    <a id="problem-add" href="problem-add.html">添加题目</a>
                                 </li>
                             </ul>
                         </li>
@@ -93,13 +101,66 @@
 
 
         <div id="page-wrapper" style="min-height: 722px;">
-        <!-- Edit One Problem -->
-            <div class="modal fade bs-example-modal-lg" id="edit-one-problem" tabindex="-1" role="dialog" aria-labelledby="EditOndProblem" aria-hidden="true">
+            <div class="modal fade bs-example-modal-lg" id="show-one-problem" tabindex="-1" role="dialog" aria-labelledby="ShowOneProblem" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title" id="EditOndProblem">Edit One Problem</h4>
+                            <h4 class="modal-title" id="ShowOneProblem">马踏棋盘</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-12">
+                                        <h4 style="color: #3091f2">Description</h4>
+                                        <p id="show-problem-content">在5＊5的棋盘上，行坐标为X，列坐标为Y的位置放置一个国际象棋中的马，请求出，该棋子不重复的访问完每一个格子的方法数。(1<=X,Y<=5)</p>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <h4 style="color: #3091f2">Input</h4>
+                                        <p id="show-problem-input">一行：用空格隔开的两个整数，分别表示马所在的行坐标X，列坐标Y。</p>
+                                    </div>
+                                    <div style="height: 20px"></div>
+                                    <div class="col-lg-12">
+                                        <h4 style="color: #3091f2">Output</h4>      
+                                        <p id="show-problem-output">一个整数，访问每一个格子一次且仅一次的方法数。</p>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <h4 style="color: #3091f2">Sample Input</h4>
+                                        <div class="panel panel-default">
+                                            <div  id="show-problem-sample-input" class="panel-body">
+                                                fsf
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <h4 style="color: #3091f2">Sample Output</h4>
+                                        <div class="panel panel-default">
+                                            <div id="show-problem-sample-output" class="panel-body">
+                                                sdfd
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <h4 style="color: #3091f2">Tips</h4>
+                                        <div class="panel panel-default">
+                                            <div id="show-problem-sample-output" class="panel-body">
+                                                sdfd
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Edit One Problem -->
+            <div class="modal fade bs-example-modal-lg" id="edit-one-problem" tabindex="-1" role="dialog" aria-labelledby="EditOneProblem" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="EditOneProblem">Edit One Problem</h4>
                         </div>
                         <div class="modal-body">
                             <div class="row">
@@ -107,41 +168,41 @@
                                     <form>
                                         <div class="form-group col-lg-12">
                                             <label for="problem-title">问题标题</label>
-                                            <input type="text" class="form-control" id="problem-title" placeholder="title">
+                                            <input type="text" class="form-control" id="edit-problem-title" placeholder="title">
                                          </div>
                                         <div class="form-group col-lg-6">
                                             <label for="problem-timelimit">时间限制</label>
-                                            <input type="text" class="form-control" id="problem-timelimit" placeholder="ms">
+                                            <input type="text" class="form-control" id="edit-problem-timelimit" placeholder="ms">
                                             <p class="help-block">输入整数 单位MS</p>
                                         </div>
                                         <div class="form-group col-lg-6">
-                                            <label for="problem-timelimit">内存限制</label>
-                                            <input type="text" class="form-control" id="problem-timelimit" placeholder="ms">
+                                            <label for="problem-memorylimit">内存限制</label>
+                                            <input type="text" class="form-control" id="edit-problem-memorylimit" placeholder="ms">
                                             <p class="help-block">输入整数 单位KB</p>
                                         </div>
                                         <div class="form-group col-lg-12">
                                             <label for="problem-content">问题描述</label>
-                                            <textarea class="form-control" rows="4" id="problem-content" placeholder="content"></textarea>
+                                            <textarea class="form-control" rows="4" id="edit-problem-content" placeholder="content"></textarea>
                                         </div>
                                         <div class="form-group col-lg-6">
                                             <label for="problem-input">输入</label>
-                                            <textarea class="form-control" rows="3" id="problem-input" placeholder="input"></textarea>
+                                            <textarea class="form-control" rows="3" id="edit-problem-input" placeholder="input"></textarea>
                                         </div>
                                         <div class="form-group col-lg-6">
                                             <label for="problem-output">输出</label>
-                                            <textarea class="form-control" rows="3" id="problem-output" placeholder="output"></textarea>
+                                            <textarea class="form-control" rows="3" id="edit-problem-output" placeholder="output"></textarea>
                                         </div>
                                         <div class="form-group col-lg-6">
                                             <label for="problem-input-sample">样例输入</label>
-                                            <textarea class="form-control" rows="3" id="problem-input-sample" placeholder="input-sample"></textarea>
+                                            <textarea class="form-control" rows="3" id="edit-problem-input-sample" placeholder="input-sample"></textarea>
                                         </div>
                                         <div class="form-group col-lg-6">
                                             <label for="problem-output-sample">样例输出</label>
-                                            <textarea class="form-control" rows="3" id="problem-output-sample" placeholder="output-sample"></textarea>
+                                            <textarea class="form-control" rows="3" id="edit-problem-output-sample" placeholder="output-sample"></textarea>
                                         </div>
                                         <div class="form-group col-lg-12">
                                             <label for="problem-tip">提示</label>
-                                            <textarea class="form-control" rows="3" id="problem-tip" placeholder="tips"></textarea>
+                                            <textarea class="form-control" rows="3" id="edit-problem-tip" placeholder="tips"></textarea>
                                         </div>
 
                                     </form>
@@ -180,8 +241,8 @@
                                     <tbody id="tbody">
                                         <tr>
                                             <td>0001</td>
-                                            <td><a href="#">A+B</a></td>
-                                            <td>使用A+B</td>
+                                            <td style="white-space:nowrap;text-overflow: ellipsis;overflow:hidden;max-width: 100px;"><a href="" data-toggle="modal"  data-target="#show-one-problem">马踏棋盘</a></td>
+                                            <td style="white-space:nowrap;text-overflow: ellipsis;overflow:hidden;max-width: 150px;">在5＊5的棋盘上，行坐标为X，列坐标为Y的位置放置一个国际象棋中的马，请求出，该棋子不重复的访问完每一个格子的方法数。(1<=X,Y<=5)</td>
                                             <td><a href="" data-toggle="modal"  data-target="#edit-one-problem">编辑</a>|<a href="#">测试</a></td>
                                             <td>
                                                 <label class="radio-inline">
