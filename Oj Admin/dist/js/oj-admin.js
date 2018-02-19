@@ -7,6 +7,14 @@ $(function() {
     $('#side-menu').metisMenu();
 });
 
+//Load datarangepicker
+$(document).ready(function() {
+    $('#add-class-time').daterangepicker(null,
+    function(start, end, label) {
+        console.log(start.toISOString(), end.toISOString(), label);
+    });
+});
+//MuiltSelect
 $(function(){
     //alert('s');
     var $multiSelect = $('#multiSelect');
