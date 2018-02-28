@@ -87,27 +87,25 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-10">
-                                <div class="table-responsive">
-                                    <table class="table table-striped table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>
-                                                    <th style="width: 80px">ID</th>
-                                                    <th>Title</th>
-                                                    <th>Content</th>
-                                                    <th style="width: 100px">Option</th>
-                                                    <th style="width: 180px">Visible</th>
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </div>
+                                <table width="100%" id="homework-problem-table" class="table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <th style="width: 80px">ID</th>
+                                                <th>Title</th>
+                                                <th>Content</th>
+                                                <th style="width: 100px">Option</th>
+                                                <th style="width: 180px">Visible</th>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                </table>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-10">
                                 <div class="pull-right">
-                                    <a href="" id="add-homework-cancel" class="btn btn-default">取消</a>
+                                    <a href="class-info.html" id="add-homework-cancel" class="btn btn-default">取消</a>
                                     <button id="add-homework" class="btn btn-info" style="width: 200px;">添加</button>
                                 </div>
                                 <div style="clear: both;"></div>
@@ -118,5 +116,14 @@
             </div>
         </div>
     </div>
-    <script src="../js/admin-class-add-homework.js"></script>
+    <!-- Daterangepicker -->
+    <script src="../vendor/daterangepicker/moment.js"></script>
+    <script src="../vendor/daterangepicker/daterangepicker.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+    
+    <script src="../dist/js/admin-class-add-homework.js"></script>
 </div>

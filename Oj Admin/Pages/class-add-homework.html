@@ -14,11 +14,21 @@
     <!-- Morris Charts CSS -->
     <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
     <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- Code Mirror -->
     <link href="../vendor/codemirror/codemirror.css" rel="stylesheet">
+    <!-- Code Mirror dracula theme -->
+    <link href="../vendor/codemirror/theme/dracula.css" rel="stylesheet">
+    <!-- Code Mirror duotone-light theme -->
+    <link href="../vendor/codemirror/theme/duotone-light.css" rel="stylesheet">
+    <!-- Code Mirror zenburn theme -->
+    <link href="../vendor/codemirror/theme/zenburn.css" rel="stylesheet">
+    <!-- DataTables CSS -->
+    <link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+    <!-- DataTables Responsive CSS -->
+    <link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
     <!-- Daterangepicker -->
-    <link href="../vendor/daterangepicker/daterangepicker-bs3.css" rel="stylesheet">
+    <link href="../vendor/daterangepicker/daterangepicker.css" rel="stylesheet">
 </head>
 <body>
     <div id="wrapper">
@@ -45,10 +55,10 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 题库模块<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="problem-list.html">题目列表</a>
+                                    <a id="problem-list" href="problem-list.html">题目列表</a>
                                 </li>
                                 <li>
-                                    <a href="problem-add.html">添加题目</a>
+                                    <a id="problem-add" href="problem-add.html">添加题目</a>
                                 </li>
                             </ul>
                         </li>
@@ -59,18 +69,7 @@
                                     <a href="class-list.html">课程列表</a>
                                 </li>
                                 <li>
-                                    <a href="class-list.html">添加课程</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 题库模块<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="problem-list.html">题目列表</a>
-                                </li>
-                                <li>
-                                    <a href="problem-list.html">添加题目</a>
+                                    <a href="class-add.html">添加课程</a>
                                 </li>
                             </ul>
                         </li>
@@ -78,20 +77,35 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 竞赛模块<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="problem-list.html">竞赛列表</a>
+                                    <a href="contest.html">竞赛列表</a>
                                 </li>
                                 <li>
-                                    <a href="problem-list.html">添加竞赛</a>
+                                    <a href="contest-list.html">添加竞赛</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 用户管理</a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 用户管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="user-student.html">学生管理</a>
+                                    <a href="user-teacher.html">教师管理</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 系统管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="authority.html">权限管理</a>
+                                    <a href="account.html">账户管理</a>
+                                    <a href="dictionary.html">字典</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
             </div>
-
         </nav>
         
 
@@ -184,27 +198,25 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-10">
-                                        <div class="table-responsive">
-                                            <table class="table table-striped table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th>
-                                                            <th style="width: 80px">ID</th>
-                                                            <th>Title</th>
-                                                            <th>Content</th>
-                                                            <th style="width: 100px">Option</th>
-                                                            <th style="width: 180px">Visible</th>
-                                                        </th>
-                                                    </tr>
-                                                </thead>
-                                            </table>
-                                        </div>
+                                        <table width="100%" id="homework-problem-table" class="table table-striped table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <th style="width: 80px">ID</th>
+                                                        <th>Title</th>
+                                                        <th>Content</th>
+                                                        <th style="width: 100px">Option</th>
+                                                        <th style="width: 180px">Visible</th>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                        </table>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-10">
                                         <div class="pull-right">
-                                            <a href="" id="add-homework-cancel" class="btn btn-default">取消</a>
+                                            <a href="class-info.html" id="add-homework-cancel" class="btn btn-default">取消</a>
                                             <button id="add-homework" class="btn btn-info" style="width: 200px;">添加</button>
                                         </div>
                                         <div style="clear: both;"></div>
@@ -215,7 +227,16 @@
                     </div>
                 </div>
             </div>
-            <script src="../js/admin-class-add-homework.js"></script>
+            <!-- Daterangepicker -->
+            <script src="../vendor/daterangepicker/moment.js"></script>
+            <script src="../vendor/daterangepicker/daterangepicker.js"></script>
+
+            <!-- DataTables JavaScript -->
+            <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+            <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+            <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+            
+            <script src="../dist/js/admin-class-add-homework.js"></script>
         </div>
     </div>
 
@@ -231,11 +252,18 @@
     <script src="../vendor/raphael/raphael.min.js"></script>
     <script src="../vendor/morrisjs/morris.min.js"></script>
     <script src="../data/morris-data.js"></script>
-    <!-- Code Mirror -->
-    <script src="../vendor/codemirror/codemirror.js"></script>
+
+    <!-- test js -->
     <!-- Daterangepicker -->
     <script src="../vendor/daterangepicker/moment.js"></script>
     <script src="../vendor/daterangepicker/daterangepicker.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+    
+    <script src="../dist/js/admin-class-add-homework.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/oj-admin.js"></script>

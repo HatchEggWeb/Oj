@@ -5,29 +5,29 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="ShowOneProblem"></h4>
+                    <h4 class="modal-title" id="ShowOneProblem">马踏棋盘</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="col-lg-12">
                                 <h4 style="color: #3091f2">Description</h4>
-                                <p id="show-problem-content"></p>
+                                <p id="show-problem-content">在5＊5的棋盘上，行坐标为X，列坐标为Y的位置放置一个国际象棋中的马，请求出，该棋子不重复的访问完每一个格子的方法数。(1<=X,Y<=5)</p>
                             </div>
                             <div class="col-lg-12">
                                 <h4 style="color: #3091f2">Input</h4>
-                                <p id="show-problem-input"></p>
+                                <p id="show-problem-input">一行：用空格隔开的两个整数，分别表示马所在的行坐标X，列坐标Y。</p>
                             </div>
                             <div style="height: 20px"></div>
                             <div class="col-lg-12">
                                 <h4 style="color: #3091f2">Output</h4>      
-                                <p id="show-problem-output"></p>
+                                <p id="show-problem-output">一个整数，访问每一个格子一次且仅一次的方法数。</p>
                             </div>
                             <div class="col-lg-6">
                                 <h4 style="color: #3091f2">Sample Input</h4>
                                 <div class="panel panel-default">
                                     <div  id="show-problem-sample-input" class="panel-body">
-                                    
+                                        fsf
                                     </div>
                                 </div>
                             </div>
@@ -35,7 +35,7 @@
                                 <h4 style="color: #3091f2">Sample Output</h4>
                                 <div class="panel panel-default">
                                     <div id="show-problem-sample-output" class="panel-body">
-                                        
+                                        sdfd
                                     </div>
                                 </div>
                             </div>
@@ -43,7 +43,7 @@
                                 <h4 style="color: #3091f2">Tips</h4>
                                 <div class="panel panel-default">
                                     <div id="show-problem-sample-output" class="panel-body">
-                                        
+                                        sdfd
                                     </div>
                                 </div>
                             </div>
@@ -121,23 +121,23 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="TestOneProblem"></h4>
+                    <h4 class="modal-title" id="TestOneProblem">马踏棋盘</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="col-lg-12">
                                 <h4 style="color: #3091f2">Description</h4>
-                                <p id="test-problem-content"></p>
+                                <p id="test-problem-content">在5＊5的棋盘上，行坐标为X，列坐标为Y的位置放置一个国际象棋中的马，请求出，该棋子不重复的访问完每一个格子的方法数。(1<=X,Y<=5)</p>
                             </div>
                             <div class="col-lg-12">
                                 <h4 style="color: #3091f2">Input</h4>
-                                <p id="test-problem-input"></p>
+                                <p id="test-problem-input">一行：用空格隔开的两个整数，分别表示马所在的行坐标X，列坐标Y。</p>
                             </div>
                             <div style="height: 20px"></div>
                             <div class="col-lg-12">
                                 <h4 style="color: #3091f2">Output</h4>      
-                                <p id="test-problem-output"></p>
+                                <p id="test-problem-output">一个整数，访问每一个格子一次且仅一次的方法数。</p>
                             </div>
                             <div class="col-lg-6">
                                 <h4 style="color: #3091f2">Sample Input</h4>
@@ -213,37 +213,74 @@
             <div class="panel panel-default">
                 <div class="panel-heading"><button id="multiSelect" class="btn btn-sm btn-info">多选</button><button id="cancelSelect" class="btn btn-sm btn-info" style="display: none;">取消</button>&nbsp<button id="allSelect" class="btn btn-sm btn-info" style="display: none;">全选</button>&nbsp<button id="deleteSelect" class="btn btn-sm btn-info" style="display: none;">删除</button></div>
                 <div class="panel-body">
-                    <div class="table-responsive">
-                        <table class="table table-striped table-hover">
-                            <thead>
-                                <tr>
-                                    <th style="width: 80px">ID</th>
-                                    <th>Title</th>
-                                    <th>Content</th>
-                                    <th style="width: 100px">Option</th>
-                                    <th style="width: 180px">Aviliable</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tbody">
-                                <tr>
-                                    <td>0001</td>
-                                    <td style="white-space:nowrap;text-overflow: ellipsis;overflow:hidden;max-width: 100px;"><a href="" data-toggle="modal"  data-target="#show-one-problem"></a></td>
-                                    <td style="white-space:nowrap;text-overflow: ellipsis;overflow:hidden;max-width: 150px;"></td>
-                                    <td><a href="" data-toggle="modal"  data-target="#edit-one-problem">编辑</a>|<a href="" data-toggle="modal"  data-target="#test-one-problem">测试</a></td>
-                                    <td>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="0001" id="0001-a" value="aviliable" checked>可用
-                                        </label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="0001" id="0001-b" value="unaviliable">不可用
-                                        </label>
-                                    </td>
-                                </tr> 
-                            </tbody>
-                        </table>
-                    </div>
+                    <table width="100%" id="problem-list-table" class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th style="width: 80px">ID</th>
+                                <th>Title</th>
+                                <th>Content</th>
+                                <th style="width: 100px">Option</th>
+                                <th style="width: 180px">Aviliable</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+                            <tr>
+                                <td>0001</td>
+                                <td style="white-space:nowrap;text-overflow: ellipsis;overflow:hidden;max-width: 100px;"><a href="" data-toggle="modal"  data-target="#show-one-problem">马踏棋盘</a></td>
+                                <td style="white-space:nowrap;text-overflow: ellipsis;overflow:hidden;max-width: 150px;">在5＊5的棋盘上，行坐标为X，列坐标为Y的位置放置一个国际象棋中的马，请求出，该棋子不重复的访问完每一个格子的方法数。(1<=X,Y<=5)</td>
+                                <td><a href="" data-toggle="modal"  data-target="#edit-one-problem">编辑</a>|<a href="" data-toggle="modal"  data-target="#test-one-problem">测试</a></td>
+                                <td>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="0001" id="0001-a" value="aviliable" checked>可用
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="0001" id="0001-b" value="unaviliable">不可用
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>0002</td>
+                                <td><a href="#">A+B</a></td>
+                                <td>使用A+B</td>
+                                <td><a href="#">编辑</a>|<a href="#">测试</a></td>
+                                <td>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="0002" id="0002-a" value="aviliable" checked>可用
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="0002" id="0002-b" value="unaviliable">不可用
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>0003</td>
+                                <td><a href="#">A+B</a></td>
+                                <td>使用A+B</td>
+                                <td><a href="#">编辑</a>|<a href="#">测试</a></td>
+                                <td>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="0003" id="0003-a" value="aviliable" checked>可用
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="0003" id="0003-b" value="unaviliable">不可用
+                                    </label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Code Mirror -->
+    <script src="../vendor/codemirror/codemirror.js"></script>
+    <!-- Code Mirror C-like -->
+    <script src="../vendor/codemirror/clike.js"></script>
+    <!-- Create Code Mirror -->
+    <script src="../vendor/codemirror/cm-create-theme.js"></script>
+    <!-- DataTables JavaScript -->
+    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+    <script src="../dist/js/admin-problem-list.js"></script>
 </div>

@@ -1,8 +1,16 @@
 //Load datarangepicker
-$('#add-class-time').daterangepicker(null,
-    function(start, end, label) {
-        console.log(start.toISOString(), end.toISOString(), label);
-    });
+$('input[name="add-class-time"]').daterangepicker(
+{
+    locale: {
+      format: 'YYYY-MM-DD'
+    },
+    startDate: moment().subtract(29, 'days'),
+    endDate: moment(),
+}, 
+function(start, end, label) {
+    //alert("A new date range was chosen: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+});
+/*
 //search seleted
 var acssSelected;
 acssSelected = "Stu No";
@@ -20,4 +28,9 @@ $('#add-class-select').change(function(event) {
 });
 $('#add-class-stu-search-button').click(function(event) {
 	var searchInput = $('#add-class-stu-search').text();
+});
+*/
+
+$('#class-add-stu-table').DataTable({
+    responsive: true
 });

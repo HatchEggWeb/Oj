@@ -43,10 +43,10 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 题库模块<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="problem-list.html">题目列表</a>
+                                    <a id="problem-list" href="problem-list.html">题目列表</a>
                                 </li>
                                 <li>
-                                    <a href="problem-add.html">添加题目</a>
+                                    <a id="problem-add" href="problem-add.html">添加题目</a>
                                 </li>
                             </ul>
                         </li>
@@ -62,38 +62,40 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 题库模块<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="problem-list.html">题目列表</a>
-                                </li>
-                                <li>
-                                    <a href="problem-list.html">添加题目</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 竞赛模块<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="problem-list.html">竞赛列表</a>
+                                    <a href="contest.html">竞赛列表</a>
                                 </li>
                                 <li>
-                                    <a href="problem-list.html">添加竞赛</a>
+                                    <a href="contest-list.html">添加竞赛</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 用户管理</a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 用户管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="user-student.html">学生管理</a>
+                                    <a href="user-teacher.html">教师管理</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 系统管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="authority.html">权限管理</a>
+                                    <a href="account.html">账户管理</a>
+                                    <a href="dictionary.html">字典</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
             </div>
-
         </nav>
         
-
-
         <div id="page-wrapper" style="min-height: 722px;">
             <!-- class-list 课程列表 -->
             <div class="row">
@@ -160,11 +162,12 @@
                     </div>
                 </div>
             </div>
+            
         </div>
     </div>
 
 
-    
+    <!-- 全局都需要用到的js文件 -->
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
@@ -177,6 +180,7 @@
     <script src="../data/morris-data.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/oj-admin.js"></script>
+
     <!-- Code Mirror -->
     <script src="../vendor/codemirror/codemirror.js" "></script>
 </body>
