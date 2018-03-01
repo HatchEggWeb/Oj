@@ -1,3 +1,17 @@
+//添加题目全选
+function checkAll() {
+    var all = document.getElementById('check-all');
+    var ones = document.getElementsByName('check-problems');
+    if(all.checked){
+        for(var i = 0; i < ones.length; i++){
+            ones[i].checked = true;
+        }
+    } else {
+        for(var i = 0; i < ones.length; i++){
+            ones[i].checked = false;
+        }
+    }
+}
 //Load datarangepicker
 $('#add-lesson-time').daterangepicker(
 {
