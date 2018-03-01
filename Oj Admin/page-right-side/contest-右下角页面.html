@@ -1,0 +1,64 @@
+<!-- contest.html 右下角页面 -->
+<div id="page-wrapper" style="min-height: 722px;">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Contest</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <a href="contest-add.html" class="btn btn-info">添加竞赛</a>
+                </div>
+                <div class="panel-body">
+                    <table width="100%" id="contest-table" class="table table-striped table-hover">
+                        <thead>
+                            <th>Contest</th>
+                            <th>Teacher</th>
+                            <th>Contestant</th>
+                            <th>Available</th>
+                            <th>Sign Up</th>
+                            <th>Password</th>
+                            <th>Option</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>竞赛1</td>
+                                <td>教师A</td>
+                                <td>39</td>
+                                <td><i class="fa fa-close" style="color: red"></i>&nbsp&nbsp不可用</td>
+                                <td><i class="fa fa-check" style="color: green"></i>&nbsp&nbsp允许报名</td>
+                                <td><i class="fa fa-check" style="color: green"></i>&nbsp&nbsp需要密码</td>
+                                <td><a href="contest-edit.html">编辑</a>|<a href="">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td>竞赛2</td>
+                                <td>教师B</td>
+                                <td>76</td>
+                                <td><i class="fa fa-close" style="color: red"></i>&nbsp&nbsp不可用</td>
+                                <td><i class="fa fa-close" style="color: red"></i>&nbsp&nbsp不可报名</td>
+                                <td><i class="fa fa-check" style="color: green"></i>&nbsp&nbsp需要密码</td>
+                                <td><a href="contest-edit.html">编辑</a>|<a href="">删除</a></td>
+                            </tr>
+                            <tr>
+                                <td>竞赛3</td>
+                                <td>教师C</td>
+                                <td>123</td>
+                                <td><i class="fa fa-check" style="color: green"></i>&nbsp&nbsp可用</td>
+                                <td><i class="fa fa-check" style="color: green"></i>&nbsp&nbsp允许报名</td>
+                                <td><i class="fa fa-close" style="color: red"></i>&nbsp&nbsp无需密码</td>
+                                <td><a href="contest-edit.html">编辑</a>|<a href="">删除</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>    
+            </div>
+        </div>
+    </div>
+    <!-- DataTables JavaScript -->
+    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+    <script src="../dist/js/admin-contest.js"></script>
+</div>
