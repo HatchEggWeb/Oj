@@ -10,7 +10,7 @@
     <!-- MetisMenu CSS -->
     <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="../dist/css/oj-admin-2.css" rel="stylesheet">
     <!-- Morris Charts CSS -->
     <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
     <!-- Custom Fonts -->
@@ -29,6 +29,8 @@
     <link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
     <!-- Daterangepicker -->
     <link href="../vendor/daterangepicker/daterangepicker.css" rel="stylesheet">
+    <!-- Overflow -->
+    <link href="../dist/css/oj-admin-overflow-hide.css" rel="stylesheet">
 </head>
 <body>
     <style type="text/css">
@@ -88,16 +90,7 @@
                                     <a href="contest.html">竞赛列表</a>
                                 </li>
                                 <li>
-                                    <a href="contest-list.html">添加竞赛</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 用户管理<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="user-student.html">学生管理</a>
-                                    <a href="user-teacher.html">教师管理</a>
+                                    <a href="contest-add.html">添加竞赛</a>
                                 </li>
                             </ul>
                         </li>
@@ -355,8 +348,8 @@
                                 <tbody id="tbody">
                                     <tr>
                                         <td>0001</td>
-                                        <td style="white-space:nowrap;text-overflow: ellipsis;overflow:hidden;max-width: 100px;"><a href="" data-toggle="modal"  data-target="#show-one-problem">马踏棋盘</a></td>
-                                        <td style="white-space:nowrap;text-overflow: ellipsis;overflow:hidden;max-width: 150px;">在5＊5的棋盘上，行坐标为X，列坐标为Y的位置放置一个国际象棋中的马，请求出，该棋子不重复的访问完每一个格子的方法数。(1<=X,Y<=5)</td>
+                                        <td class="overflow-hide"><a href="" data-toggle="modal"  data-target="#show-one-problem">马踏棋盘</a></td>
+                                        <td class="overflow-hide">在5＊5的棋盘上，行坐标为X，列坐标为Y的位置放置一个国际象棋中的马，请求出，该棋子不重复的访问完每一个格子的方法数。(1<=X,Y<=5)</td>
                                         <td><a href="" data-toggle="modal"  data-target="#edit-one-problem">编辑</a>|<a href="" data-toggle="modal"  data-target="#test-one-problem">测试</a></td>
                                         <td>
                                             <label class="radio-inline">

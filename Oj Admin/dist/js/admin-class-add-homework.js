@@ -1,17 +1,15 @@
 //添加题目全选
 function checkAll() {
-    var all = document.getElementById('check-all');
-    var ones = document.getElementsByName('check-problems');
-    if(all.checked){
-        for(var i = 0; i < ones.length; i++){
-            ones[i].checked = true;
-        }
-    } else {
-        for(var i = 0; i < ones.length; i++){
-            ones[i].checked = false;
-        }
-    }
+    $('#search-result-table-m tr').slice(1).addClass('info');
 }
+function cancelAll(){
+    $('#search-result-table-m tr').slice(1).removeClass('info');
+}
+//搜索结果多选
+$('#search-result-table-m tr').slice(1).click(function(event) {
+    //alert();
+    $(this).toggleClass('info');
+});
 //Load datarangepicker
 $('#add-homework-time').daterangepicker(
 {
@@ -45,6 +43,30 @@ $('#homework-search-button').click(function(event) {
 	var searchInput = $("#homework-search").text();
 });
 */
-$('#homework-problem-table').DataTable({
-	responsive: true
-})
+var homeworkProblemTable = $('#homework-problem-table').DataTable({
+	responsive: true,
+    createdRow: function(row,data,index) {
+        $('td', row).eq(2).addClass('overflow-hide');
+        $('td', row).eq(1).addClass('overflow-hide');
+    }
+});
+//移动搜索结果至大表格
+$('#add-problems-m').click(function(event) {
+    var resultTablem = $('#search-result-table-m');
+    var hpTable = $('#homework-problem-table');
+    var searchResult = resultTablem.find('tbody');
+    var addResult = hpTable.find('tbody');
+    var resultRows = searchResult.find('.info');
+    //alert(resultRows.html());
+    for(var i = 0; i < resultRows.length; i++){
+        homeworkProblemTable.row.add( [
+            resultRows.eq(i).find('td').eq(0).html(),
+            resultRows.eq(i).find('td').eq(1).html(),
+            resultRows.eq(i).find('td').eq(2).html(),
+            '<a href="">删除</a>',
+            '<label class="radio-inline"><input name="0001" id="0001-a" value="aviliable" checked="" type="radio">可用</label><label class="radio-inline"><input name="0001" id="0001-b" value="aviliable" checked="" type="radio">不可用</label>'
+        ] ).draw();
+    }
+    $('#search-result').modal('hide');
+    $('#search-result-table-m tr').slice(1).removeClass('info');
+});

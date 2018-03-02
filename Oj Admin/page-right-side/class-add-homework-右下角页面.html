@@ -41,13 +41,13 @@
                                 <span style="font-weight: 700">添加题目</span>
                             </div>
                             <div class="form-inline pull-right">
-                                <label for="homework-search">
-                                    <select id="homework-select" class="form-control">
+                                <label for="homework-search-m">
+                                    <select id="homework-select-m" class="form-control">
                                         <option selected="">ID</option>
                                         <option>Title</option>
                                         <option>Content</option>
                                     </select>
-                                    <input class="form-control" type="text" name="homework-search" id="homework-search">
+                                    <input class="form-control" type="text" name="homework-search-m" id="homework-search-m">
                                     <button id="homework-search-btn-m" class="btn btn-info">搜索</button>
                                 </label>
                             </div>
@@ -56,33 +56,29 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <table class="table table-striped table-hover">
+                            <table id="search-result-table-m" class="table table-striped table-hover">
                                 <thead>
                                     <tr>
-                                        <th style="width: 30px;"><input id="check-all" onclick="checkAll()" type="checkbox" name="check-all"></th>
                                         <th style="max-width: 50px;">ID</th>
                                         <th style="max-width: 100px;">Title</th>
-                                        <th>Content</th>
+                                        <th style="overflow: hidden;">Content</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><input type="checkbox" name="check-problems"></td>
                                         <td>0001</td>
                                         <td>1+1</td>
-                                        <td>内容内容内容内容内容内容内容内容内容内容内容内容内容内容</td>
+                                        <td class="overflow-hide">内容内容内容内容内容内容内容内容内容内容内容内容内容内容</td>
                                     </tr>
                                     <tr>
-                                        <td><input type="checkbox" name="check-problems"></td>
-                                        <td>0001</td>
+                                        <td>0002</td>
                                         <td>1+1</td>
-                                        <td>内容内容内容内容内容内容内容内容内容内容内容内容内容内容</td>
+                                        <td class="overflow-hide">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</td>
                                     </tr>
                                     <tr>
-                                        <td><input type="checkbox" name="check-problems"></td>
-                                        <td>0001</td>
+                                        <td>0003</td>
                                         <td>1+1</td>
-                                        <td>内容内容内容内容内容内容内容内容内容内容内容内容内容内容</td>
+                                        <td class="overflow-hide">内容内容内容内容内容内容内容内容内容内容内容内容内容内容</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -91,7 +87,9 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                    <button id="add-problems" type="button" class="btn btn-primary">添加</button>
+                    <button id="cancel-all" onclick="cancelAll()" type="button" class="btn btn-warning">全不</button>
+                    <button id="check-all" onclick="checkAll()" type="button" class="btn btn-info">全选</button>
+                    <button id="add-problems-m" type="button" class="btn btn-primary">添加</button>
                 </div>
             </div>
         </div>
@@ -117,8 +115,8 @@
                             </div>
                             <div class="col-lg-5 col-md-6">
                                 <div class="form-group">
-                                    <label for="add-homework-teacher">任课老师</label>
-                                    <input class="form-control" type="text" name="add-homework-teacher" placeholder="teacher" value="此处为教师名">
+                                    <label for="add-homework-class">课程</label>
+                                    <input class="form-control" type="text" name="add-homework-class" placeholder="class" value="此处为课程名" disabled>
                                 </div>
                             </div>
                         </div>
@@ -161,15 +159,15 @@
                                 <table width="100%" id="homework-problem-table" class="table table-striped table-hover">
                                     <thead>
                                         <tr>
-                                            <th>
-                                                <th style="width: 80px">ID</th>
-                                                <th>Title</th>
-                                                <th>Content</th>
-                                                <th style="width: 100px">Option</th>
-                                                <th style="width: 180px">Visible</th>
-                                            </th>
+                                            <th style="width: 80px">ID</th>
+                                            <th>Title</th>
+                                            <th>Content</th>
+                                            <th style="width: 100px">Option</th>
+                                            <th style="width: 180px">Visible</th>
                                         </tr>
                                     </thead>
+                                    <tbody>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -177,7 +175,7 @@
                             <div class="col-lg-10">
                                 <div class="pull-right">
                                     <a href="class-info.html" id="add-homework-cancel" class="btn btn-default">取消</a>
-                                    <button id="add-homework" class="btn btn-info" style="width: 200px;">添加</button>
+                                    <button id="add-homework" class="btn btn-info" style="width: 200px;">添加作业</button>
                                 </div>
                                 <div style="clear: both;"></div>
                             </div>

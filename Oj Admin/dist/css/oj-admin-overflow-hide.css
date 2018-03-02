@@ -1,0 +1,13 @@
+.overflow-hide{
+    overflow:hidden;/*超出的文字隐藏*/  
+    text-overflow:ellipsis;/*文字超出后,显示省略号*/  
+    max-width: 100px;  
+    white-space:nowrap;/*文字不换行*/  
+    word-break:keep-all;/*文字不换行*/
+}
+.overflow-hide{
+    max-width: 100px;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    overflow:hidden;
+}
