@@ -48,6 +48,7 @@ var lessonProblemTable = $('#lesson-problem-table').DataTable({
     createdRow: function(row,data,index) {
         $('td', row).eq(2).addClass('overflow-hide');
         $('td', row).eq(1).addClass('overflow-hide');
+        $('td', row).eq(1).parent().attr('id',data[0]);
     }
 });
 //移动搜索结果至大表格
@@ -63,10 +64,13 @@ $('#add-problems-m').click(function(event) {
             resultRows.eq(i).find('td').eq(0).html(),
             resultRows.eq(i).find('td').eq(1).html(),
             resultRows.eq(i).find('td').eq(2).html(),
-            '<a href="">删除</a>',
+            '<a style="cursor:pointer" type="button" onClick="removeRow(\'#'+resultRows.eq(i).find('td').eq(0).html().toString()+'\')">移除</a>',
             '<label class="radio-inline"><input name="0001" id="0001-a" value="aviliable" checked="" type="radio">可用</label><label class="radio-inline"><input name="0001" id="0001-b" value="aviliable" checked="" type="radio">不可用</label>'
         ] ).draw();
     }
     $('#search-result').modal('hide');
     $('#search-result-table-m tr').slice(1).removeClass('info');
 });
+function removeRow(id){
+    lessonProblemTable.row(id).remove().draw(false);
+}
