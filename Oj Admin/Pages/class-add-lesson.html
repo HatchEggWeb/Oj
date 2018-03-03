@@ -218,7 +218,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">添加练习</div>
                         <div class="panel-body">
-							<form>
+							<form id="add-lesson-form">
                                 <div class="row">
                                     <div class="col-lg-5 col-md-6">
                                         <div class="form-group">
@@ -255,16 +255,9 @@
                                             <span style="font-weight: 700">添加题目</span>
                                         </div>
                                         <div class="form-inline pull-right">
-                                            <label for="lesson-search">
-                                                <select id="lesson-select" class="form-control">
-                                                    <option selected="">ID</option>
-                                                    <option>Title</option>
-                                                    <option>Content</option>
-                                                </select>
-                                                <input class="form-control" type="text" name="lesson-search" id="lesson-search">
-                                                <a href="" id="lesson-search-button" class="btn btn-info" data-toggle="modal"  data-target="#search-result">查找</a>
-                                            </label>
+                                            <a href="" id="lesson-search-button" class="btn btn-info" data-toggle="modal"  data-target="#search-result">添加</a>
                                         </div>
+                                        <div style="clear: both; height: 8px;"></div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -298,6 +291,7 @@
                                         <div style="clear: both;"></div>
                                     </div>
                                 </div>
+                                <input type="hidden" name="class-id">
                             </form>
                         </div>    
                     </div>
