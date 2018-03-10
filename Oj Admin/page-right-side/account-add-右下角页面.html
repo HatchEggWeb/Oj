@@ -1,0 +1,329 @@
+<div id="page-wrapper" style="min-height: 722px;">
+    <!-- Add Student -->
+    <div class="modal fade" id="add-student" tabindex="-1" role="dialog" aria-labelledby="AddStudent" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="AddStudent">Add Student</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form>
+                                <div class="form-group col-lg-6">
+                                    <label for="stu-acction">账户</label>
+                                    <input class="form-control" type="text" name="stu-acction">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="stu-password">密码</label>
+                                    <input class="form-control" type="password" name="stu-password">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="stu-number">学号</label>
+                                    <input class="form-control" type="text" name="stu-number">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="stu-name">姓名</label>
+                                    <input class="form-control" type="text" name="stu-name">
+                                </div>
+                                <div class="form-group col-lg-4">
+                                    <label for="stu-grade">年级</label>
+                                    <select class="form-control" id="stu-grade">
+                                        <option>2017级</option>
+                                        <option>2016级</option>
+                                        <option>2015级</option>
+                                        <option>2014级</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-lg-8">
+                                    <label for="stu-college">学院</label>
+                                    <select class="form-control" id="stu-college">
+                                        
+                                    </select>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="stu-major">专业</label>
+                                    <select class="form-control" id="stu-major">
+                                        
+                                    </select>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="stu-class">班级</label>
+                                    <select class="form-control" id="stu-class">
+                                        
+                                    </select>
+                                </div>
+                                <div class="form-group col-lg-12">
+                                    <label for="stu-email">邮箱</label>
+                                    <input class="form-control" type="email" name="stu-email">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button id="add-student-btn" type="button" class="btn btn-primary">添加</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Add Teacher -->
+    <div class="modal fade" id="add-teacher" tabindex="-1" role="dialog" aria-labelledby="AddTeacher" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="AddTeacher">Add Teacher</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form>
+                                <div class="form-group col-lg-6">
+                                    <label for="teacher-acction">账户</label>
+                                    <input class="form-control" type="text" name="teacher-acction">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="teacher-password">密码</label>
+                                    <input class="form-control" type="password" name="teacher-password">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="teacher-number">工号</label>
+                                    <input class="form-control" type="text" name="teacher-number">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="teacher-name">姓名</label>
+                                    <input class="form-control" type="text" name="teacher-name">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="teacher-college">学院</label>
+                                    <select class="form-control" id="teacher-college">
+                                        
+                                    </select>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="teacher-email">邮箱</label>
+                                    <input class="form-control" type="email" name="teacher-email">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button id="add-teacher-btn" type="button" class="btn btn-primary">添加</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Add Admin -->
+    <div class="modal fade" id="add-admin" tabindex="-1" role="dialog" aria-labelledby="AddAdmin" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="AddAdmin">Add Admin</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form>
+                                <div class="form-group col-lg-6">
+                                    <label for="admin-acction">账户</label>
+                                    <input class="form-control" type="text" name="admin-acction">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="admin-password">密码</label>
+                                    <input class="form-control" type="password" name="admin-password">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="admin-number">工号</label>
+                                    <input class="form-control" type="text" name="admin-number">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="admin-name">姓名</label>
+                                    <input class="form-control" type="text" name="admin-name">
+                                </div>
+                                <div class="form-group col-lg-12">
+                                    <label for="admin-email">邮箱</label>
+                                    <input class="form-control" type="email" name="admin-email">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button id="add-admin-btn" type="button" class="btn btn-primary">添加</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Add SAdmin -->
+    <div class="modal fade" id="add-sadmin" tabindex="-1" role="dialog" aria-labelledby="AddSAdmin" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="AddSAdmin">Add SAdmin</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form>
+                                <div class="form-group col-lg-6">
+                                    <label for="sadmin-acction">账户</label>
+                                    <input class="form-control" type="text" name="sadmin-acction">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="sadmin-password">密码</label>
+                                    <input class="form-control" type="password" name="sadmin-password">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="sadmin-number">工号</label>
+                                    <input class="form-control" type="text" name="sadmin-number">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="sadmin-name">姓名</label>
+                                    <input class="form-control" type="text" name="sadmin-name">
+                                </div>
+                                <div class="form-group col-lg-12">
+                                    <label for="sadmin-email">邮箱</label>
+                                    <input class="form-control" type="email" name="sadmin-email">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button id="add-sadmin-btn" type="button" class="btn btn-primary">添加</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Add Account</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <a href="account.html" class="btn btn-info">返回</a>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <!-- Student -->
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <a href="" data-toggle="modal" data-target="#add-student">
+                                <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <i class="fa fa-graduation-cap fa-4x"></i>
+                                        </div>
+                                        <div class="col-xs-9 text-right">
+                                            <div class="huge">Student</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <div class="pull-left">
+                                        Add One Student
+                                    </div>
+                                    <div class="pull-right">
+                                        <i class="fa fa-arrow-circle-right"></i>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                        <!-- Teacher -->
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <a href="" data-toggle="modal" data-target="#add-teacher">
+                                <div class="panel panel-green">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <i class="fa fa-book fa-4x"></i>
+                                        </div>
+                                        <div class="col-xs-9 text-right">
+                                            <div class="huge">Teacher</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <div class="pull-left">
+                                        Add One Teacher
+                                    </div>
+                                    <div class="pull-right">
+                                        <i class="fa fa-arrow-circle-right"></i>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                        <!-- Admin -->
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <a href="" data-toggle="modal" data-target="#add-admin">
+                                <div class="panel panel-yellow">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <i class="fa fa-star-half-o fa-4x"></i>
+                                        </div>
+                                        <div class="col-xs-9 text-right">
+                                            <div class="huge">Admin</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <div class="pull-left">
+                                        Add One Admin
+                                    </div>
+                                    <div class="pull-right">
+                                        <i class="fa fa-arrow-circle-right"></i>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                        <!-- Super Admin -->
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <a href="" data-toggle="modal" data-target="#add-sadmin">
+                                <div class="panel panel-red">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <i class="fa fa-star fa-4x"></i>
+                                        </div>
+                                        <div class="col-xs-9 text-right">
+                                            <div class="huge">SAdmin</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <div class="pull-left">
+                                        Add One SuperAdmin
+                                    </div>
+                                    <div class="pull-right">
+                                        <i class="fa fa-arrow-circle-right"></i>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+</div>

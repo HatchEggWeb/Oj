@@ -1,4 +1,5 @@
 //添加题目全选
+$('.daterangepicker').remove();
 function checkAll() {
     $('#search-result-table-m tr').slice(1).addClass('info');
 }

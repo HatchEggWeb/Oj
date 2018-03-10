@@ -1,5 +1,73 @@
 <!-- contest-add.html 右下角页面 -->
 <div id="page-wrapper" style="min-height: 722px;">
+    <!-- Add Problem from Library -->
+    <div class="modal fade"  id="search-result" tabindex="-1" role="dialog" aria-labelledby="SearchResult" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="SearchResult">搜索结果</h4>
+                </div>
+                <div class="modal-body">
+                <div class="row">
+                        <div class="col-lg-12">
+                            <div class="pull-left">
+                                <span style="font-weight: 700">添加题目</span>
+                            </div>
+                            <div class="form-inline pull-right">
+                                <label for="problem-search-m">
+                                    <select id="problem-select-m" class="form-control">
+                                        <option selected="">ID</option>
+                                        <option>Title</option>
+                                        <option>Content</option>
+                                    </select>
+                                    <input class="form-control" type="text" name="problem-search-m" id="problem-search-m">
+                                    <button id="problem-search-btn-m" class="btn btn-info">搜索</button>
+                                </label>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <table id="search-result-table-m" class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th style="max-width: 50px;">ID</th>
+                                        <th style="max-width: 100px;">Title</th>
+                                        <th>Content</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>0001</td>
+                                        <td>1+1</td>
+                                        <td>内容内容内容内容内容内容内容内容内容内容内容内容内容内容</td>
+                                    </tr>
+                                    <tr>
+                                        <td>0002</td>
+                                        <td>1+1</td>
+                                        <td>内容内容内容内容内容内容内容内容内容内容内容内容内容内容</td>
+                                    </tr>
+                                    <tr>
+                                        <td>0003</td>
+                                        <td>1+1</td>
+                                        <td>内容内容内容内容内容内容内容内容内容内容内容内容内容内容</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button id="cancel-all" onclick="cancelAll()" type="button" class="btn btn-warning">全不</button>
+                    <button id="check-all" onclick="checkAll()" type="button" class="btn btn-info">全选</button>
+                    <button id="add-problems-m" type="button" class="btn btn-primary">添加</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Add Contest</h1>
@@ -25,10 +93,20 @@
                                     <label for="contest-description">竞赛简介</label>
                                     <textarea class="form-control"></textarea>
                                 </div>
+                                <div class="form-group col-lg-12">
+                                    <label for="contest-time">竞赛时间</label>
+                                    <input type="text" name="contest-time" id="contest-time" class="form-control">
+                                </div>
                             </div>
                         </div>
                         <div class="panel panel-info">
-                            <div class="panel-heading">竞赛题目</div>
+                            <div class="panel-heading">
+                                竞赛题目
+                                <div class="pull-right">
+                                    <a href="" id="lesson-search-button" class="btn btn-info" data-toggle="modal"  data-target="#search-result">添加</a>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </div>
                             <div class="panel-body">
                                 <table width="100%"  id="problem-table" class="table table-striped table-hover">
                                     <thead>
@@ -40,24 +118,6 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>0001</td>
-                                            <td>!+!</td>
-                                            <td>###########</td>
-                                            <td><a href="">移除</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>0062</td>
-                                            <td>!+!</td>
-                                            <td>###########</td>
-                                            <td><a href="">移除</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>0017</td>
-                                            <td>!+!</td>
-                                            <td>###########</td>
-                                            <td><a href="">移除</a></td>
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -65,7 +125,7 @@
                     </form>
                 </div>
                 <div class="col-lg-4">
-                    <div class="form-group col-lg-12">
+                    <div class="form-group">
                         <div class="panel panel-success">
                             <div class="panel-heading">基本操作</div>
                             <div class="panel-body">
@@ -91,7 +151,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-12">
+                    <div class="">
                         <div class="panel panel-warning">
                             <div class="panel-heading">
                                 导入学生
@@ -129,6 +189,9 @@
             </div>
         </div>
     </div>
+    <!-- Datarangepicker -->
+    <script src="../vendor/daterangepicker/moment.js"></script>
+    <script src="../vendor/daterangepicker/daterangepicker.js"></script>
     <!-- DataTables JavaScript -->
     <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
     <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>

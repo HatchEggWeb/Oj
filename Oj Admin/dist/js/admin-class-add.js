@@ -1,4 +1,5 @@
 //Load datarangepicker
+$('.daterangepicker').remove();
 $('input[name="add-class-time"]').daterangepicker(
 {
     locale: {

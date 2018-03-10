@@ -26,7 +26,74 @@
             </div>
         </div>
     </div>
-
+    <!-- Add Student from Library -->
+    <div class="modal fade"  id="search-result" tabindex="-1" role="dialog" aria-labelledby="SearchResult" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="SearchResult">搜索结果</h4>
+                </div>
+                <div class="modal-body">
+                <div class="row">
+                        <div class="col-lg-12">
+                            <div class="pull-left">
+                                <span style="font-weight: 700">添加学生</span>
+                            </div>
+                            <div class="form-inline pull-right">
+                                <label for="student-search-m">
+                                    <select id="student-select-m" class="form-control">
+                                        <option selected="">ID</option>
+                                        <option>Title</option>
+                                        <option>Content</option>
+                                    </select>
+                                    <input class="form-control" type="text" name="student-search-m" id="student-search-m">
+                                    <button id="student-search-btn-m" class="btn btn-info">查找</button>
+                                </label>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <table id="search-result-table-m" class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th style="max-width: 50px;">Number</th>
+                                        <th style="max-width: 100px;">Name</th>
+                                        <th style="overflow: hidden;">Class</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>261500123</td>
+                                        <td>占戈夫</td>
+                                        <td>软件一班</td>
+                                    </tr>
+                                    <tr>
+                                        <td>211500124</td>
+                                        <td>陈德善</td>
+                                        <td>机械二班</td>
+                                    </tr>
+                                    <tr>
+                                        <td>211500125</td>
+                                        <td>吴凌可</td>
+                                        <td>电气三班</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button id="cancel-all" onclick="cancelAll()" type="button" class="btn btn-warning">全不</button>
+                    <button id="check-all" onclick="checkAll()" type="button" class="btn btn-info">全选</button>
+                    <button id="add-students-m" type="button" class="btn btn-primary">添加</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Class Info</h1>
@@ -83,7 +150,7 @@
                                                             <td>第一次练习</td>
                                                             <td>02.28</td>
                                                             <td>03.16</td>
-                                                            <td><a href="#">删除</a></td>
+                                                            <td><a href="javascript:void(0);">删除</a></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -110,7 +177,7 @@
                                                             <td>第一次练习</td>
                                                             <td>02.28</td>
                                                             <td>03.16</td>
-                                                            <td><a href="#">删除</a></td>
+                                                            <td><a href="javascript:void(0);">删除</a></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -122,14 +189,20 @@
                             <div class="col-lg-4">
                                 <div class="col-lg-12">
                                     <div class="panel panel-default">
-                                        <div class="panel-heading"><button class="btn btn-info" type="button" data-toggle="modal" data-target="#upload-excel">添加学生</button></div>
+                                        <div class="panel-heading">
+                                            <button class="btn btn-info" type="button" data-toggle="modal" data-target="#upload-excel">Excel导入</button>
+                                            <div class="form-inline pull-right">
+                                                <a href="" id="student-search-button" class="btn btn-info" data-toggle="modal" data-target='#search-result'>查找添加</a>
+                                            </div>
+                                        </div>
                                         <div class="panel-body">
-                                            <div class="table-responsive">
+                                            <div id="student-table" class="table-responsive">
                                                 <table class="table table-striped table-hover">
                                                     <thead>
                                                         <tr>
                                                             <th>Student Number</th>
                                                             <th>Name</th>
+                                                            <th>Class</th>
                                                             <th>Option</th>
                                                         </tr>
                                                     </thead>
@@ -137,7 +210,8 @@
                                                         <tr>
                                                             <td>221500134</td>
                                                             <td>张翊卓</td>
-                                                            <td><a href="#">删除</a></td>
+                                                            <td>软件一班</td>
+                                                            <td><a href="javascript:void(0);">删除</a></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
