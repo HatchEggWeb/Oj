@@ -129,12 +129,12 @@ function addPResult(data){
     addDelete();
 }
 //添加 "竞赛者" 搜索结果至表格
-var dataStr = "[{\"id\":\"4aed5c62-216e-11\",\"username\":\"221500109\",\"password\":\"123456\",\"name\":\"周志强\",\"email\":null,\"role\":\"student\",\"authKey\":null,\"accessToken\":null},{\"id\":\"16ade169-216e-11\",\"username\":\"221500116\",\"password\":\"123456\",\"name\":\"范俊杰\",\"email\":null,\"role\":\"student\",\"authKey\":null,\"accessToken\":null}]";
-var data = $.parseJSON(dataStr);
-console.log(data.length);
-$('#contestant-search-btn-c').click(function(){
-    addCResult(data);
-});
+// var dataStr = "[{\"id\":\"4aed5c62-216e-11\",\"username\":\"221500109\",\"password\":\"123456\",\"name\":\"周志强\",\"email\":null,\"role\":\"student\",\"authKey\":null,\"accessToken\":null},{\"id\":\"16ade169-216e-11\",\"username\":\"221500116\",\"password\":\"123456\",\"name\":\"范俊杰\",\"email\":null,\"role\":\"student\",\"authKey\":null,\"accessToken\":null}]";
+// var data = $.parseJSON(dataStr);
+// console.log(data.length);
+// $('#contestant-search-btn-c').click(function(){
+//     addCResult(data);
+// });
 function addCResult(data){
     var h = "";
     for(var i = 0; i < data.length; i++){
