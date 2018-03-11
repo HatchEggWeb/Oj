@@ -112,3 +112,37 @@ function addDelete(){
 		$(this).parent().parent().remove();
 	});
 }
+//添加 "问题" 搜索结果至表格
+// var dataStr = "[{\"code\":10001 ,\"title\":\"A+B Problem\" , \"description\": \"Calculate a + b.\"},{\"code\":10003 ,\"title\":\"Duplicate Pair\" , \"description\": \"An array of length n, with address from 1 to n inclusive, contains entries from the set {1,2,...,n-1} and there's exactly two elements with the same value. Your task is to find out the value.\"}]";
+// var data = $.parseJSON(dataStr);
+// console.log(data.length);
+// $('#problem-search-btn-p').click(function(){
+// 	addPResult(data);
+// });
+function addPResult(data){
+	var h = "";
+	for(var i = 0; i < data.length; i++){
+		h += '<tr>' + '<td>' + data[i].code + '</td>' + '<td class="overflow-hide">' + data[i].title + '</td>' + '<td class="overflow-hide">' + data[i].description + '</td>' + '</tr>';
+	}
+	console.log(h);
+	$('#search-result-table-p').append(h);
+	multicheck_p();
+	addDelete();
+}
+//添加 "竞赛者" 搜索结果至表格
+var dataStr = "[{\"id\":\"4aed5c62-216e-11\",\"username\":\"221500109\",\"password\":\"123456\",\"name\":\"周志强\",\"email\":null,\"role\":\"student\",\"authKey\":null,\"accessToken\":null},{\"id\":\"16ade169-216e-11\",\"username\":\"221500116\",\"password\":\"123456\",\"name\":\"范俊杰\",\"email\":null,\"role\":\"student\",\"authKey\":null,\"accessToken\":null}]";
+var data = $.parseJSON(dataStr);
+console.log(data.length);
+$('#contestant-search-btn-c').click(function(){
+	addCResult(data);
+});
+function addCResult(data){
+	var h = "";
+	for(var i = 0; i < data.length; i++){
+		h += '<tr>' + '<td>' + data[i].username + '</td>' + '<td>' + data[i].name + '</td>' + '</tr>';
+	}
+	console.log(h);
+	$('#search-result-table-c').append(h);
+	multicheck_c();
+	addDelete();
+}
