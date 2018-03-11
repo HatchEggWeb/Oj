@@ -12,6 +12,14 @@ function(start, end, label) {
 });
 var contestSecret = $('#contest-secret');
 var contestPassword = $('#contest-password');
+//载入时判断是否选中
+if(contestSecret.prop('checked')){
+    //alert('ss');
+    document.getElementById('contest-password').disabled = false;
+} else {
+    contestPassword.val('');
+    document.getElementById('contest-password').disabled = true;
+}
 $('#contest-secret').change(function(event) {
 	//alert('');
 	if(contestSecret.prop('checked')){
