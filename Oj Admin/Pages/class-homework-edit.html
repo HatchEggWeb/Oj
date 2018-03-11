@@ -126,7 +126,6 @@
                                 <p>*下载所需模板</p>
                                 <a href="#" class="btn btn-info" type="button">下载模板</a>
                             </div>
-                            <hr>
                             <form>
                                 <label for="added-excel">上传Excel文件</label>
                                 <input type="file" id="uploaded-excel">
@@ -140,7 +139,7 @@
                 </div>
             </div>
 
-            <!-- Add Student from Library -->
+            <!-- Add Problem from Library -->
             <div class="modal fade"  id="search-result" tabindex="-1" role="dialog" aria-labelledby="SearchResult" aria-hidden="true" data-backdrop="static">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
@@ -152,17 +151,17 @@
                         <div class="row">
                                 <div class="col-lg-12">
                                     <div class="pull-left">
-                                        <span style="font-weight: 700">添加学生</span>
+                                        <span style="font-weight: 700">添加题目</span>
                                     </div>
                                     <div class="form-inline pull-right">
-                                        <label for="student-search-m">
-                                            <select id="student-select-m" class="form-control">
+                                        <label for="homework-search-m">
+                                            <select id="homework-select-m" class="form-control">
                                                 <option selected="">ID</option>
                                                 <option>Title</option>
                                                 <option>Content</option>
                                             </select>
-                                            <input class="form-control" type="text" name="student-search-m" id="student-search-m">
-                                            <button id="student-search-btn-m" class="btn btn-info">查找</button>
+                                            <input class="form-control" type="text" name="homework-search-m" id="homework-search-m">
+                                            <button id="homework-search-btn-m" class="btn btn-info">搜索</button>
                                         </label>
                                     </div>
                                     <div style="clear: both;"></div>
@@ -173,26 +172,26 @@
                                     <table id="search-result-table-m" class="table table-striped table-hover">
                                         <thead>
                                             <tr>
-                                                <th style="max-width: 50px;">Number</th>
-                                                <th style="max-width: 100px;">Name</th>
-                                                <th style="overflow: hidden;">Class</th>
+                                                <th style="max-width: 50px;">ID</th>
+                                                <th style="max-width: 100px;">Title</th>
+                                                <th style="overflow: hidden;">Content</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>261500123</td>
-                                                <td>占戈夫</td>
-                                                <td>软件一班</td>
+                                                <td>0001</td>
+                                                <td>1+1</td>
+                                                <td class="overflow-hide">内容内容内容内容内容内容内容内容内容内容内容内容内容内容</td>
                                             </tr>
                                             <tr>
-                                                <td>211500124</td>
-                                                <td>陈德善</td>
-                                                <td>机械二班</td>
+                                                <td>0002</td>
+                                                <td>1+1</td>
+                                                <td class="overflow-hide">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</td>
                                             </tr>
                                             <tr>
-                                                <td>211500125</td>
-                                                <td>吴凌可</td>
-                                                <td>电气三班</td>
+                                                <td>0003</td>
+                                                <td>1+1</td>
+                                                <td class="overflow-hide">内容内容内容内容内容内容内容内容内容内容内容内容内容内容</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -203,7 +202,7 @@
                             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                             <button id="cancel-all" onclick="cancelAll()" type="button" class="btn btn-warning">全不</button>
                             <button id="check-all" onclick="checkAll()" type="button" class="btn btn-info">全选</button>
-                            <button id="add-students-m" type="button" class="btn btn-primary">添加</button>
+                            <button id="add-problems-m" type="button" class="btn btn-primary">添加</button>
                         </div>
                     </div>
                 </div>
@@ -211,92 +210,100 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Add Class</h1>
+                    <h1 class="page-header">Add Homework</h1>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
-                        <div class="panel-heading">添加课程</div>
+                        <div class="panel-heading">添加作业</div>
                         <div class="panel-body">
-							<form>
+							<form id="add-homework-form">
                                 <div class="row">
                                     <div class="col-lg-5 col-md-6">
                                         <div class="form-group">
-                                            <label for="add-class-name">课程名称</label>
-                                            <input class="form-control" type="text" name="add-class-name" placeholder="name">
+                                            <label for="add-homework-name">作业名称</label>
+                                            <input class="form-control" type="text" name="add-homework-name" placeholder="name">
                                         </div>
                                     </div>
                                     <div class="col-lg-5 col-md-6">
                                         <div class="form-group">
-                                            <label for="add-class-teacher">任课老师</label>
-                                            <input class="form-control" type="text" name="add-class-teacher" placeholder="teacher">
+                                            <label for="add-homework-class">课程</label>
+                                            <input class="form-control" type="text" name="add-homework-class" placeholder="class" value="此处为课程名" disabled>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-10">
                                         <div class="form-group">
-                                            <label for="add-class-describe">课程简介</label>
-                                            <textarea class="form-control" name="add-class-describe" rows="4" placeholder="describe"></textarea>
+                                            <label for="add-homework-describe">作业简介</label>
+                                            <textarea class="form-control" name="add-homework-describe" rows="4" placeholder="describe"></textarea>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-10">
                                         <div class="form-group">
-                                            <label for="add-class-time">课程时间</label>
-                                            <input type="text" name="add-class-time" id="add-class-time" class="form-control">
+                                            <label for="add-homework-time">作业时间</label>
+                                            <input type="text" name="add-homework-time" id="add-homework-time" class="form-control" value="03/18/2018 - 07/23/2018">
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-lg-10">
+                                        <div class="pull-left">
+                                            <span style="font-weight: 700">添加题目</span>
+                                        </div>
+                                        <div class="form-inline pull-right">
+                                            <label for="homework-search">
+                                                <a href="" id="homework-search-button" class="btn btn-info" data-toggle="modal" data-target='#search-result'>查找</a>
+                                            </label>
+                                        </div>
+                                        <div style="clear: both; height: 8px;"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-10">
+                                        <table width="100%" id="homework-problem-table" class="table table-striped table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width: 80px">ID</th>
+                                                    <th>Title</th>
+                                                    <th>Content</th>
+                                                    <th style="width: 100px">Option</th>
+                                                    <th style="width: 180px">Visible</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-10">
+                                        <div class="pull-right">
+                                            <a href="class-info.html" id="add-homework-cancel" class="btn btn-default">取消</a>
+                                            <button id="add-homework" class="btn btn-info" style="width: 200px;">添加作业</button>
+                                        </div>
+                                        <div style="clear: both;"></div>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="class-id">
                             </form>
-                            <div class="row">
-                                <div class="col-lg-10">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <button class="btn btn-info" type="button" data-toggle="modal" data-target="#upload-excel">Excel导入</button>
-                                            <div class="form-inline pull-right">
-                                                <a href="" id="student-search-button" class="btn btn-info" data-toggle="modal" data-target='#search-result'>查找添加</a>
-                                            </div>
-                                            <div style="clear: both"></div>
-                                        </div>
-                                        <div class="panel-body">
-                                            <table width="100%" id="class-add-stu-table" class="table table-striped table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th style="width: 180px">Student Number</th>
-                                                        <th>Name</th>
-                                                        <th>Class</th>
-                                                        <th style="width: 100px">Option</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-10">
-                                    <button class="btn btn-info input-lg" style="width: 100%">添加课程</button>
-                                </div>
-                            </div>
                         </div>    
                     </div>
                 </div>
             </div>
-            <!-- DataTables JavaScript -->
-            <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
-            <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-            <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
             <!-- Daterangepicker -->
             <script src="../vendor/daterangepicker/moment.js"></script>
             <script src="../vendor/daterangepicker/daterangepicker.js"></script>
 
-            <script src="../dist/js/admin-class-add.js"></script>
+            <!-- DataTables JavaScript -->
+            <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+            <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+            <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+            
+            <script src="../dist/js/admin-class-homework-edit.js"></script>
         </div>
     </div>
 
@@ -312,18 +319,20 @@
     <script src="../vendor/raphael/raphael.min.js"></script>
     <script src="../vendor/morrisjs/morris.min.js"></script>
     <script src="../data/morris-data.js"></script>
-    <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/oj-admin.js"></script>
 
-    <!-- 调试用 局部js -->
+    <!-- test js -->
     <!-- Daterangepicker -->
     <script src="../vendor/daterangepicker/moment.js"></script>
     <script src="../vendor/daterangepicker/daterangepicker.js"></script>
-    <script src="../dist/js/admin-class-add.js"></script>
+
     <!-- DataTables JavaScript -->
     <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
     <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
     <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
-    <script src="../dist/js/admin-class-add.js"></script>
+    
+    <script src="../dist/js/admin-class-homework-edit.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/oj-admin.js"></script>
 </body>
 </html>
