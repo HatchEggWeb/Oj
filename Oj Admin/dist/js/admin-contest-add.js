@@ -108,8 +108,11 @@ $('#add-contestants-c').click(function(event) {
 });
 //移动题目
 function addRow(add,result){
+	var h="";
 	for(var i = 0; i < result.length; i++){
-		add.append('<tr>' + '<td>' + result.eq(i).find('td').eq(0).html() + '</td>' + '<td>' + result.eq(i).find('td').eq(1).html() + '</td>' + '<td>' + result.eq(i).find('td').eq(2).html() + '</td>' + '<td><a href="javascript:void(0);">删除</a></td>' + '</tr>');
+		h = '<tr>' + '<td>' + result.eq(i).find('td').eq(0).html() + '</td>' + '<td>' + result.eq(i).find('td').eq(1).html() + '</td>' + '<td><a href="javascript:void(0);">删除</a></td>' + '</tr>';
+		console.log(h);
+		add.append(h);
 	}
 	addDelete();
 }
@@ -149,8 +152,8 @@ function addCResult(data){
 	for(var i = 0; i < data.length; i++){
 		h += '<tr>' + '<td>' + data[i].username + '</td>' + '<td>' + data[i].name + '</td>' + '</tr>';
 	}
-	console.log(h);
-	$('#search-result-table-c').append(h);
+	//console.log(h);
+	$('#search-result-table-c').find('tbody').append(h);
 	multicheck_c();
 	addDelete();
 }

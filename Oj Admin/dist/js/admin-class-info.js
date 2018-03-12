@@ -43,7 +43,7 @@ $('#add-students-m').click(function(event) {
 //移动题目
 function addRow(add,result){
 	for(var i = 0; i < result.length; i++){
-		add.append('<tr>' + '<td>' + result.eq(i).find('td').eq(0).html() + '</td>' + '<td>' + result.eq(i).find('td').eq(1).html() + '</td>' + '<td>' + result.eq(i).find('td').eq(2).html() + '</td>' + '<td><a href="javascript:void(0);">删除</a></td>' + '</tr>');
+		add.append('<tr>' + '<td>' + result.eq(i).find('td').eq(0).html() + '</td>' + '<td>' + result.eq(i).find('td').eq(1).html() + '</td>' + '<td><a href="javascript:void(0);">删除</a></td>' + '</tr>');
 	}
 	addDelete();
 }
@@ -53,4 +53,20 @@ function addDelete(){
 		//alert($(this).parent().parent());
 		$(this).parent().parent().remove();
 	});
+}
+//添加搜索结果至表格
+// var dataStr = "[{\"id\":\"4aed5c62-216e-11\",\"username\":\"221500109\",\"password\":\"123456\",\"name\":\"周志强\",\"email\":null,\"role\":\"student\",\"authKey\":null,\"accessToken\":null},{\"id\":\"16ade169-216e-11\",\"username\":\"221500116\",\"password\":\"123456\",\"name\":\"范俊杰\",\"email\":null,\"role\":\"student\",\"authKey\":null,\"accessToken\":null}]";
+// var data = $.parseJSON(dataStr);
+// console.log(data.length);
+// $('#student-search-btn-m').click(function(event) {
+//     addResult(data);
+// });
+function addResult(data){
+    var h = "";
+    for(var i = 0; i < data.length; i++){
+        h += '<tr>' + '<td>' + data[i].username + '</td>' + '<td>' + data[i].name + '</td>' + '</tr>';
+    }
+    $('#search-result-table-m').find('tbody').append(h);
+    addSelect();
+    addDelete();
 }

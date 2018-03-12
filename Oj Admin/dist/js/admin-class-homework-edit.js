@@ -77,3 +77,19 @@ function removeRow(id){
     //alert(id);
     homeworkProblemTable.row(id).remove().draw(false);
 }
+//添加 "问题" 搜索结果至表格
+// var dataStr = "[{\"code\":10001 ,\"title\":\"A+B Problem\" , \"description\": \"Calculate a + b.\"},{\"code\":10003 ,\"title\":\"Duplicate Pair\" , \"description\": \"An array of length n, with address from 1 to n inclusive, contains entries from the set {1,2,...,n-1} and there's exactly two elements with the same value. Your task is to find out the value.\"}]";
+// var data = $.parseJSON(dataStr);
+// console.log(data.length);
+// $('#homework-search-btn-m').click(function(){
+//  addResult(data);
+// });
+function addResult(data){
+    var h = "";
+    for(var i = 0; i < data.length; i++){
+        h += '<tr>' + '<td>' + data[i].code + '</td>' + '<td class="overflow-hide">' + data[i].title + '</td>' + '<td class="overflow-hide">' + data[i].description + '</td>' + '</tr>';
+    }
+    console.log(h);
+    $('#search-result-table-m').find('tbody').append(h);
+    multicheck_p();
+}

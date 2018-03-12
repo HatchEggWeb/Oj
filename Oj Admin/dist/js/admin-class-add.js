@@ -27,10 +27,12 @@ function cancelAll(){
     $('#search-result-table-m tr').slice(1).removeClass('info');
 }
 //搜索结果多选
-$('#search-result-table-m tr').slice(1).click(function(event) {
-    //alert();
-    $(this).toggleClass('info');
-});
+function multicheck(){
+    $('#search-result-table-m tr').slice(1).click(function(event) {
+        //alert();
+        $(this).toggleClass('info');
+    });
+}
 //移动搜索结果至大表格
 $('#add-students-m').click(function(event) {
     var resultTablem = $('#search-result-table-m');
@@ -43,7 +45,6 @@ $('#add-students-m').click(function(event) {
         classAddStuTable.row.add( [
             resultRows.eq(i).find('td').eq(0).html(),
             resultRows.eq(i).find('td').eq(1).html(),
-            resultRows.eq(i).find('td').eq(2).html(),
             '<a style="cursor:pointer" type="button" onClick="removeRow(\'#'+resultRows.eq(i).find('td').eq(0).html().toString()+'\')">移除</a>'
         ] ).draw();
     }
@@ -53,4 +54,25 @@ $('#add-students-m').click(function(event) {
 //删除题目
 function removeRow(id){
     classAddStuTable.row(id).remove().draw(false);
+}
+function addDelete(){
+    $("[href='javascript:void(0);']").click(function(event) {
+        //alert($(this).parent().parent());
+        $(this).parent().parent().remove();
+    });
+}
+//添加搜索结果至表格
+// var dataStr = "[{\"id\":\"4aed5c62-216e-11\",\"username\":\"221500109\",\"password\":\"123456\",\"name\":\"周志强\",\"email\":null,\"role\":\"student\",\"authKey\":null,\"accessToken\":null},{\"id\":\"16ade169-216e-11\",\"username\":\"221500116\",\"password\":\"123456\",\"name\":\"范俊杰\",\"email\":null,\"role\":\"student\",\"authKey\":null,\"accessToken\":null}]";
+// var data = $.parseJSON(dataStr);
+// console.log(data.length);
+// $('#student-search-btn-m').click(function(event) {
+//     addResult(data);
+// });
+function addResult(data){
+    var h = "";
+    for(var i = 0; i < data.length; i++){
+        h += '<tr>' + '<td>' + data[i].username + '</td>' + '<td>' + data[i].name + '</td>' + '</tr>';
+    }
+    $('#search-result-table-m').find('tbody').append(h);
+    multicheck();
 }
